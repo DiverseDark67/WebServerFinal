@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rainy Day - Your first spot to look on rainy days</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="animatedbutton.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script>
+        // JavaScript to handle "Add to Cart" functionality
+        function addToCart(itemId) {
+            const quantity = document.getElementById('quantity-' + itemId).value;
+
+            // Perform AJAX request
+            fetch('shoppingCart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `itemId=${itemId}&quantity=${quantity}`
+            }).then(response => response.text())
+            .then(data => {
+                // Show confirmation or update the cart icon
+                alert('Item added to cart!');
+            }).catch(error => {
+                console.error('Error adding to cart:', error);
+            });
+
+            // Prevent form automatic submission/redirect
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- TODO: Move around header to get buttons on left. Text on right side-->
+        <b>
+            <div class="header-text">
+                Rainy Day - Free Shipping for orders over $50
+            </div>
+            <a class="header-buttons" href="shoppingcart.php">
+                <button class="animated-button">
+                    <span>Shopping Cart</span>
+                    <span></span>
+                </button>
+            </a>
+            &nbsp;
+            <a class="header-buttons" href="index.html">
+                <button class="animated-button">
+                    <span>Home</span>
+                    <span></span>
+                </button>
+            </a>
+        </b>
+    </header>
+
+    <h1>Not for Real - This is a school project</h1>
+    <h2>Our Products</h2>
+    <div class="product">
+        <p>6 products</p>
+    </div>
+
+    <div class="items">
+        <div class="item">
+            <img class="resize" src="images/umbrella1/umbrella.jpg" alt="Classic Black Umbrella">
+            <p>Black Umbrella</p>
+            <p>$25.00</p>
+            <select id="quantity-1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button onclick="return addToCart(1)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img class="resize" src="images/umbrella2/umbrella.jpg" alt="Teds Yellow Umbrella">
+            <p>Yellow Umbrella</p>
+            <p>$20.00</p>
+            <select id="quantity-2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button onclick="return addToCart(2)">Add to Cart</button>
+        </div>
+        <div class = "item">
+            <img class="resize" src="images/umbrella3/umbrella.jpg" alt="Shedrain Bubble Umbrella">
+            <p>Clear Umbrella</p>
+            <p>$15.00</p>
+            <select id="quantity-3">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button onclick="return addToCart(3)">Add to Cart</button>
+        </div>
+        <div class = "item">
+            <img class="resize" src="images/raincoat/raincoat.jpg" alt="Womens Blue Gortex Raincoat">
+            <p>Gortex Raincoat</p>
+            <p>$85.00</p>
+            <select id="quantity-4">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button onclick="return addToCart(4)">Add to Cart</button>
+        </div>
+        <div class = "item">
+            <img class="resize" src="images/raincoat2/raincoat.jpg" alt="Yellow Raincoat">
+            <p>Yellow Raincoat</p>
+            <p>$35.00</p>
+            <select id="quantity-5">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button onclick="return addToCart(5)">Add to Cart</button>
+        </div>
+        <div class = "item">
+            <img class="resize" src="images/rainboots/rainboots.jpg" alt="Black Rainboots">
+            <p>Black Rain Boots</p>
+            <p>$20.00</p>
+            <select id="quantity-6">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button onclick="return addToCart(6)">Add to Cart</button>
+        </div>
+    </div>
+    <br>
+    <footer>
+        <p>© 2024 Rainy Day</p>
+    </footer>
+</body>
+</html>

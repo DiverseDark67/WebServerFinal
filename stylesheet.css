@@ -1,0 +1,66 @@
+html {
+    background-color: #aac8e0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    font-size: small;
+    border: 2px solid black;
+}
+
+a.header-buttons {
+    text-align: right;
+}
+
+.header-text {
+    display: inline-block;
+    text-align: center;
+    margin-left: 1em;
+}
+
+body {
+    font-family: Consolas, Monaco, monospace;
+}
+
+.content {
+    padding: 1em;
+}
+
+.product {
+    color: #888;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+
+.item {
+    border: 1px solid #888;
+    padding: 1em;
+    text-align: center;
+    background-color: white;
+}
+
+img.resize {
+    width:200px; /* you can use % */
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    text-align: center;
+    font-size: small;
+    border: 2px solid black;
+}
